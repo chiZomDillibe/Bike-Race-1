@@ -467,8 +467,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbcc737638a325439d7925b8ac30155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1899619508}
-  Force: -5
+  Player: {fileID: 1267599592}
+  Force: 5
+  turnSpeed: 20
 --- !u!4 &638372153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 497186, guid: 7cc1045a0e531c442bdc048fdfbd1231, type: 3}
@@ -897,8 +898,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c41520c1bdfee8469ddd650a89ce8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1899619508}
-  Force: 5
+  Player: {fileID: 1267599592}
+  Force: -5
+  turnSpeed: -20
 --- !u!114 &981587650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1276,15 +1278,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 428284, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 428284, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 428284, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 428284, guid: 09082afec7b5e824ca611a0cc3264bcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1313,6 +1315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1899619509}
+  - component: {fileID: 1899619510}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -1343,6 +1346,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1899619510
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899619508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1992177118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413252, guid: 6becd15d7262243478b14c339313ad72, type: 3}
