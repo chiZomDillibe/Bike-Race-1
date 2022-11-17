@@ -4,19 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-chisom's-branch
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Scene1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/mAIN MENU 1.unity
     guid: 3def9b9c8bd9eb0479708b6c3124e132
-  - enabled: 1
-    path: Assets/Scenes/New Scene.unity
-    guid: 9d08369e1d0cfea49baae03cc12812be
-  m_configObjects: {}
-
-  m_Scenes: []
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 606f6320b96ddc34882bcdb67a6dd5b2, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 419a1ea5fd342174dacfef805c06b7a1, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: b395564776cb4d345acf19fda23405aa, type: 2}
-main
