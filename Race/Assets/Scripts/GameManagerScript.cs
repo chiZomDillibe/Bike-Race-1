@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -9,12 +11,13 @@ public class GameManagerScript : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     private int score = 0;
     public bool isGameActive = true;
+    public Button restartButton;
 
-    // Start is called before the first frame update
-    void Start()
+    
+    public void StartGame()
     {
+        isGameActive = true;
         score = 0;
-        
     }
 
     // Update is called once per frame
@@ -36,7 +39,9 @@ public class GameManagerScript : MonoBehaviour
     public void GameOver()
     {
         gameOverText.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
         isGameActive = false;
+        
     }
-
+    
 }
