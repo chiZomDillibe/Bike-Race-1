@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class OutOfBound : MonoBehaviour
 {
-    private float bound = 0f;
-    private float sideBound = 15f;
+    private float bound = 0;
+    private float sideBound = 3124f;
     private GameManagerScript gameManagerX;
 
     public ParticleSystem dirtParticle;
@@ -21,12 +21,14 @@ public class OutOfBound : MonoBehaviour
 
         if (transform.position.y < bound)
         {
+            
+            transform.position = new Vector3 (transform.position.x, 2, transform.position.z);
             dirtParticle.Play();
-            transform.position = new Vector3 (transform.position.x, 0, transform.position.z);
+            gameManagerX.isGameActive = false;
         }
-       if (transform.position.x < -sideBound)
+       if (transform.position.x < -sideBound || transform.position.x > sideBound)
         {
-            //gameManagerX.GameOver();
+            gameManagerX.GameOver();
         // transform.position = new Vector3(-sideBound, transform.position.y, transform.position.z);
         }
     }

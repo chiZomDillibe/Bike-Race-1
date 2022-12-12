@@ -10,7 +10,14 @@ public class LEFT : MonoBehaviour,IPointerDownHandler, IPointerUpHandler
     bool isPressed = false;
     public GameObject Player;
     public float Force;
-    public float turnSpeed = -20;
+    public float turnSpeed = -25.0f;
+
+    public void StartGame(int difficulty)
+    {
+        Force = Force * difficulty;
+        turnSpeed = turnSpeed * difficulty;
+       
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +30,13 @@ public class LEFT : MonoBehaviour,IPointerDownHandler, IPointerUpHandler
     {
         if (isPressed)
         {
-         Player.transform.Translate(Force * Time.deltaTime , 0 ,0);
+         
+            // We move the vehicle forward
+            Player.transform.Translate(Vector3.forward * Time.deltaTime * Force);
 
-         Player.transform.Rotate(Vector3.up*Time.deltaTime*turnSpeed);
+
+            // We turn the vehicle 
+            Player.transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed);
         }
     }
 

@@ -11,6 +11,6 @@ public class Restart : MonoBehaviour, IPointerClickHandler
         //Detect if a click occurs
         public void OnPointerClick(PointerEventData pointerEventData)
          {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         }
 }

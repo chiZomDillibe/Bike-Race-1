@@ -24,14 +24,15 @@ public class DetectCollisionX : MonoBehaviour
         {
             playerAudio.PlayOneShot(cheersSound, 1.0f);
         }
-        explosionParticle.Play();
+        else
+        {
+            explosionParticle.Play();
 
+
+            playerAudio.PlayOneShot(crashSound, 1.0f);
+            gameManagerX.GameOver();
+        }
         
-        
-        //instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-        playerAudio.PlayOneShot(crashSound, 1.0f);
-        gameManagerX.GameOver();
-        //explosionParticle.Stop();
 
     }
 

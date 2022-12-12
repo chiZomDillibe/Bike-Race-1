@@ -9,29 +9,32 @@ public class Controller : MonoBehaviour
     // we changed all public class to private
 
     private float speed = 10.0f;
-    private float turnSpeed = 15.0f;
+    private float turnSpeed = 25.0f;
     private float horizontalInput;
     private float forwardInput;
-    private float leftLimit = 19.0f;
-    private float rightLimit = 7.0f;
     private GameManagerScript gameManagerX;
-
-    
-
-
 
 
     // Start is called before the first frame update
     void Start()
     {
         
-        gameManagerX = GameObject.Find("Game Manager").GetComponent<GameManagerScript>(); 
+        gameManagerX = GameObject.Find("Game Manager").GetComponent<GameManagerScript>();
+        gameManagerX.isGameActive = false;
+        
     }
 
+    public void StartGame(int difficulty)
+    {
+        speed = speed * difficulty;
+        turnSpeed = turnSpeed * difficulty;
+        gameManagerX.isGameActive = true;
+    }
 
     // Update is called once per frame
     void Update()
     {
+       
         // This is where we get player input
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
@@ -39,7 +42,7 @@ public class Controller : MonoBehaviour
         if (gameManagerX.isGameActive)
         {
             // We move the vehicle forward
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed );
 
 
             // We turn the vehicle 

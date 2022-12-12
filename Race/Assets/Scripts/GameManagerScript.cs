@@ -10,14 +10,17 @@ public class GameManagerScript : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     private int score = 0;
-    public bool isGameActive = true;
+    public bool isGameActive;
     public Button restartButton;
+    public int level;
+    public GameObject titleScreen;
 
     
-    public void StartGame()
+    void Start()
     {
-        isGameActive = true;
+        //isGameActive = true;
         score = 0;
+        
     }
 
     // Update is called once per frame
@@ -27,13 +30,13 @@ public class GameManagerScript : MonoBehaviour
         {
             UpdateScore();
         }
-        
     }
     private void UpdateScore()
     {
         
         score += 1;
         scoreText.text = "Score: " + score;
+        titleScreen.gameObject.SetActive(false);
     }
 
     public void GameOver()
