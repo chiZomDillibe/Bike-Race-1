@@ -8,7 +8,7 @@ public class RIGHT : MonoBehaviour,IPointerDownHandler, IPointerUpHandler
     bool isPressed = false;
     public GameObject Player;
     public float Force;
-    public float turnSpeed = 20;
+    public float turnSpeed = 25.0f;
 
 
     // Start is called before the first frame update
@@ -17,14 +17,26 @@ public class RIGHT : MonoBehaviour,IPointerDownHandler, IPointerUpHandler
         
     }
 
+    public void StartGame(int difficulty)
+    {
+        Force = Force * difficulty;
+        turnSpeed = turnSpeed * difficulty;
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (isPressed)
         {
-         Player.transform.Translate(Force * Time.deltaTime , 0 ,0);
+            // We move the vehicle forward
+            Player.transform.Translate(Vector3.forward * Time.deltaTime * Force);
 
-          Player.transform.Rotate(Vector3.up*Time.deltaTime*turnSpeed);
+
+            // We turn the vehicle 
+            Player.transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed);
+
+          
         }
     }
 
